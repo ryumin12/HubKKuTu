@@ -33,86 +33,92 @@ exports.TESTER = GLOBAL.ADMIN.concat([
 exports.IS_SECURED = GLOBAL.IS_SECURED;
 exports.SSL_OPTIONS = GLOBAL.SSL_OPTIONS;
 exports.OPTIONS = {
-    'man': { name: "Manner" },
-    'ext': { name: "Injeong" },
-    'mis': { name: "Mission" },
-    'loa': { name: "Loanword" },
-    'prv': { name: "Proverb" },
-    'str': { name: "Strict" },
-    'k32': { name: "Sami" },
-    'no2': { name: "No2" },
-    'no3': { name: "No3" }
+	'man': { name: "Manner" },
+	'ext': { name: "Injeong" },
+	'mis': { name: "Mission" },
+	'loa': { name: "Loanword" },
+	'prv': { name: "Proverb" },
+	'str': { name: "Strict" },
+	'k32': { name: "Sami" },
+	'no2': { name: "No2" },
+	'no3': { name: "No3" }
 };
-exports.MOREMI_PART = [ 'back', 'body', 'eye', 'eyedeco', 'mouth', 'facedeco', 'shoes', 'clothes', 'dressdeco', 'head', 'hairdeco', 'lhand', 'rhand', 'front' ];
-exports.CATEGORIES = [ "all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "deco", "back" ];
+exports.MOREMI_PART = ['back', 'body', 'eye', 'eyedeco', 'mouth', 'facedeco', 'shoes', 'clothes', 'dressdeco', 'head', 'hairdeco', 'lhand', 'rhand', 'front'];
+exports.CATEGORIES = ["all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "deco", "back"];
 exports.AVAIL_EQUIP = [
-    "NIK", "BDG1", "BDG2", "BDG3", "BDG4",
-    "Mhead", "Meye", "Mmouth", "Mhand", "Mclothes", "Mshoes", "Mbody", "Mback", "Mfacedeco", "Meyedeco", "Mhairdeco", "Mdressdeco"
+	"NIK", "BDG1", "BDG2", "BDG3", "BDG4",
+	"Mhead", "Meye", "Mmouth", "Mhand", "Mclothes", "Mshoes", "Mbody", "Mback", "Mfacedeco", "Meyedeco", "Mhairdeco", "Mdressdeco"
 ];
 exports.GROUPS = {
-    'spec': [ "PIX", "PIY", "PIZ", "CNS" ],
-    'skin': [ "NIK", "Mbody" ],
-    'badge': [ "BDG1", "BDG2", "BDG3", "BDG4" ],
-    'head': [ "Mhead" ],
-    'eye': [ "Meye" ],
-    'mouth': [ "Mmouth" ],
-    'clothes': [ "Mclothes" ],
-    'hs': [ "Mhand", "Mshoes" ],
-    'deco': [ "Mfacedeco", "Meyedeco", "Mhairdeco", "Mdressdeco" ],
-    'back': [ "Mback", "Mfront" ]
+	'spec': ["PIX", "PIY", "PIZ", "CNS"],
+	'skin': ["NIK", "Mbody"],
+	'badge': ["BDG1", "BDG2", "BDG3", "BDG4"],
+	'head': ["Mhead"],
+	'eye': ["Meye"],
+	'mouth': ["Mmouth"],
+	'clothes': ["Mclothes"],
+	'hs': ["Mhand", "Mshoes"],
+	'deco': ["Mfacedeco", "Meyedeco", "Mhairdeco", "Mdressdeco"],
+	'back': ["Mback", "Mfront"]
 };
 exports.RULE = {
-/*
-	유형: { lang: 언어,
-		rule: 이름,
-		opts: [ 추가 규칙 ],
-		time: 시간 상수,
-		ai: AI 가능?,
-		big: 큰 화면?,
-		ewq: 현재 턴 나가면 라운드 종료?
-	}
-*/
-	'EKT': { lang: "en",
+	/*
+		유형: { lang: 언어,
+			rule: 이름,
+			opts: [ 추가 규칙 ],
+			time: 시간 상수,
+			ai: AI 가능?,
+			big: 큰 화면?,
+			ewq: 현재 턴 나가면 라운드 종료?
+		}
+	*/
+	'EKT': {
+		lang: "en",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis" ],
+		opts: ["man", "ext", "mis"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'ESH': { lang: "en",
+	'ESH': {
+		lang: "en",
 		rule: "Classic",
-		opts: [ "ext", "mis" ],
+		opts: ["ext", "mis"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KKT': { lang: "ko",
+	'KKT': {
+		lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str", "k32" ],
+		opts: ["man", "ext", "mis", "loa", "str", "k32"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KSH': { lang: "ko",
+	'KSH': {
+		lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str" ],
+		opts: ["man", "ext", "mis", "loa", "str"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'CSQ': { lang: "ko",
+	'CSQ': {
+		lang: "ko",
 		rule: "Jaqwi",
-		opts: [ "ijp" ],
+		opts: ["ijp"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: false
 	},
-	'KCW': { lang: "ko",
+	'KCW': {
+		lang: "ko",
 		rule: "Crossword",
 		opts: [],
 		time: 2,
@@ -120,92 +126,102 @@ exports.RULE = {
 		big: true,
 		ewq: false
 	},
-	'KTY': { lang: "ko",
+	'KTY': {
+		lang: "ko",
 		rule: "Typing",
-		opts: [ "prv" ],
+		opts: ["prv"],
 		time: 1,
 		ai: false,
 		big: false,
 		ewq: false
 	},
-	'ETY': { lang: "en",
+	'ETY': {
+		lang: "en",
 		rule: "Typing",
-		opts: [ "prv" ],
+		opts: ["prv"],
 		time: 1,
 		ai: false,
 		big: false,
 		ewq: false
 	},
-	'KAP': { lang: "ko",
+	'KAP': {
+		lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis", "loa", "str" ],
+		opts: ["man", "ext", "mis", "loa", "str"],
 		time: 1,
 		ai: true,
 		big: false,
 		_back: true,
 		ewq: true
 	},
-	'HUN': { lang: "ko",
+	'HUN': {
+		lang: "ko",
 		rule: "Hunmin",
-		opts: [ "ext", "mis", "loa", "str" ],
+		opts: ["ext", "mis", "loa", "str"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KDA': { lang: "ko",
+	'KDA': {
+		lang: "ko",
 		rule: "Daneo",
-		opts: [ "ijp", "mis" ],
+		opts: ["ijp", "mis"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'EDA': { lang: "en",
+	'EDA': {
+		lang: "en",
 		rule: "Daneo",
-		opts: [ "ijp", "mis" ],
+		opts: ["ijp", "mis"],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-    'KSS': { lang: "ko",
-        rule: "Sock",
-        opts: [ "no2", "no3" ],
-        time: 1,
-        ai: false,
-        big: true,
-        ewq: false
-    },
-    'ESS': { lang: "en",
-        rule: "Sock",
-        opts: [ "no2", "no3" ],
-        time: 1,
-        ai: false,
-        big: true,
-        ewq: false
-    },
-    'VWQ': { lang: "ko",
-        rule: "Jaqwi",
-        opts: [ "ijp" ],
-        time: 1,
-        ai: true,
-        big: false,
-        ewq: false
-    },
-    'KKK': { lang: "ko",
-        rule: "Classic",
-        opts: [ "man", "ext", "mis" ],
-        time: 1,
-        ai: true,
-        big: false,
-        ewq: true
-    },
+	'KSS': {
+		lang: "ko",
+		rule: "Sock",
+		opts: ["no2", "no3"],
+		time: 1,
+		ai: false,
+		big: true,
+		ewq: false
+	},
+	'ESS': {
+		lang: "en",
+		rule: "Sock",
+		opts: ["no2", "no3"],
+		time: 1,
+		ai: false,
+		big: true,
+		ewq: false
+	},
+	'VWQ': {
+		lang: "ko",
+		rule: "Jaqwi",
+		opts: ["ijp"],
+		time: 1,
+		ai: true,
+		big: false,
+		ewq: false
+	},
+	'KKK': {
+		lang: "ko",
+		rule: "Classic",
+		opts: ["man", "ext", "mis", "loa", "str"],
+		time: 1,
+		ai: true,
+		big: false,
+		ewq: true
+	},
 };
-exports.getPreScore = function(text, chain, tr){
-	return 2 * (Math.pow(5 + 7 * (text || "").length, 0.74) + 0.88 * (chain || []).length) * ( 0.5 + 0.5 * tr );
+exports.getPreScore = function (text, chain, tr) {
+	return 2 * (Math.pow(5 + 7 * (text || "").length, 0.74) + 0.88 * (chain || []).length) * (0.5 + 0.5 * tr);
 };
-exports.getPenalty = function(chain, score){
+exports.getPenalty = function (chain, score) {
 	return -1 * Math.round(Math.min(10 + (chain || []).length * 2.1 + score * 0.15, score));
 };
 exports.GAME_TYPE = Object.keys(exports.RULE);
@@ -213,10 +229,10 @@ exports.EXAMPLE_TITLE = {
 	'ko': "가나다라마바사아자차",
 	'en': "abcdefghij"
 };
-exports.INIT_SOUNDS = [ "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ" ];
-exports.MEDIAL_SOUNDS = [ "ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ" ];
-exports.MISSION_ko = [ "가", "나", "다", "라", "마", "바", "사", "아", "자", "차", "카", "타", "파", "하" ];
-exports.MISSION_en = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+exports.INIT_SOUNDS = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
+exports.MEDIAL_SOUNDS = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"];
+exports.MISSION_ko = ["가", "나", "다", "라", "마", "바", "사", "아", "자", "차", "카", "타", "파", "하"];
+exports.MISSION_en = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 exports.KO_INJEONG = [
 	"BOJ", "GTA", "IMS", "VOC", "KRR", "KMU", "KKC", "KTV", "KBR", "NRT", "NYK", "NET",
@@ -244,8 +260,8 @@ exports.EN_THEME = [
 exports.IJP_EXCEPT = [
 	""
 ];
-exports.KO_IJP = exports.KO_INJEONG.concat(exports.KO_THEME).filter(function(item){ return !exports.IJP_EXCEPT.includes(item); });
-exports.EN_IJP = exports.EN_INJEONG.concat(exports.EN_THEME).filter(function(item){ return !exports.IJP_EXCEPT.includes(item); });
+exports.KO_IJP = exports.KO_INJEONG.concat(exports.KO_THEME).filter(function (item) { return !exports.IJP_EXCEPT.includes(item); });
+exports.EN_IJP = exports.EN_INJEONG.concat(exports.EN_THEME).filter(function (item) { return !exports.IJP_EXCEPT.includes(item); });
 exports.REGION = {
 	'en': "en",
 	'ko': "kr"
@@ -265,9 +281,9 @@ exports.KOR_FLAG = {
 	OLD: 16, // 옛말
 	MUNHWA: 32 // 문화어
 };
-exports.WP_REWARD = function(){
+exports.WP_REWARD = function () {
 	return 10 + Math.floor(Math.random() * 91);
 };
-exports.getRule = function(mode){
+exports.getRule = function (mode) {
 	return exports.RULE[exports.GAME_TYPE[mode]];
 };
