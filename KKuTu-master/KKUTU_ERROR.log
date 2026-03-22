@@ -1,0 +1,113 @@
+This is an error log file of the game server.
+You may use like `tail -f KKUTU_ERROR.log` to watch this.
+:8496 [2025-10-16 5:56:57 ├F10: PM┤] ERROR: error: 관리자 요청에 의해서 연결을 끝냅니다
+error: 관리자 요청에 의해서 연결을 끝냅니다
+    at Parser.parseErrorMessage (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:297:12)
+    at readableAddChunk (_stream_readable.js:272:9)
+    at Socket.Readable.push (_stream_readable.js:213:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23):8496 [2025-10-16 5:56:57 ├F10: PM┤] ERROR: Error: read ECONNRESET
+Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:209:20):8496 [2025-10-16 5:56:57 ├F10: PM┤] ERROR: Error: Connection terminated unexpectedly
+Error: Connection terminated unexpectedly
+    at Connection.<anonymous> (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:132:73)
+    at Object.onceWrapper (events.js:420:28)
+    at Connection.emit (events.js:314:20)
+    at Socket.<anonymous> (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (events.js:314:20)
+    at TCP.<anonymous> (net.js:675:12):8496 [2025-10-16 5:57:37 ├F10: PM┤] ERROR: TypeError: Cannot read property 'findOne' of undefined
+TypeError: Cannot read property 'findOne' of undefined
+    at WebSocketServer.<anonymous> (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\Game\slave.js:132:17)
+    at WebSocketServer.emit (events.js:314:20)
+    at C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\ws\lib\WebSocketServer.js:88:16
+    at WebSocketServer.completeUpgrade (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\ws\lib\WebSocketServer.js:270:5)
+    at WebSocketServer.handleUpgrade (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\ws\lib\WebSocketServer.js:197:10)
+    at Server.<anonymous> (C:\Users\USER\Desktop\KKuTu-master\KKuTu-master\Server\lib\node_modules\ws\lib\WebSocketServer.js:87:14)
+    at Server.emit (events.js:314:20)
+    at onParserExecuteCommon (_http_server.js:641:14)
+    at onParserExecute (_http_server.js:575:3):8496 [2026-3-16 2:20:09 ├F10: AM┤] ERROR: TypeError: Cannot read property '_id' of null
+TypeError: Cannot read property '_id' of null
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:62:27
+    at exports.Tail.go (D:\KKuTu-master\KKuTu-master\Server\lib\sub\lizard.js:43:16)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:249:21
+    at callback (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:316:13)
+    at Query.preCB (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:298:6)
+    at Query.handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\query.js:138:12)
+    at Client._handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:290:19)
+    at Connection.emit (events.js:314:20)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:114:12
+    at Parser.parse (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:40:17):8496 [2026-3-16 2:49:33 ├F10: AM┤] ERROR: error: 관리자 요청에 의해서 연결을 끝냅니다
+error: 관리자 요청에 의해서 연결을 끝냅니다
+    at Parser.parseErrorMessage (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:287:98)
+    at Parser.handlePacket (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:126:29)
+    at Parser.parse (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:39:38)
+    at Socket.<anonymous> (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:297:12)
+    at readableAddChunk (_stream_readable.js:272:9)
+    at Socket.Readable.push (_stream_readable.js:213:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23):8496 [2026-3-16 2:49:33 ├F10: AM┤] ERROR: Error: read ECONNRESET
+Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:209:20):8496 [2026-3-16 2:49:33 ├F10: AM┤] ERROR: Error: Connection terminated unexpectedly
+Error: Connection terminated unexpectedly
+    at Connection.<anonymous> (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:132:73)
+    at Object.onceWrapper (events.js:420:28)
+    at Connection.emit (events.js:314:20)
+    at Socket.<anonymous> (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:57:12)
+    at Socket.emit (events.js:314:20)
+    at TCP.<anonymous> (net.js:675:12):8496 [2026-3-16 5:45:35 ├F10: PM┤] ERROR: TypeError: Cannot read property '_id' of null
+TypeError: Cannot read property '_id' of null
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:62:27
+    at exports.Tail.go (D:\KKuTu-master\KKuTu-master\Server\lib\sub\lizard.js:43:16)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:249:21
+    at callback (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:316:13)
+    at Query.preCB (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:298:6)
+    at Query.handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\query.js:138:12)
+    at Client._handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:290:19)
+    at Connection.emit (events.js:314:20)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:114:12
+    at Parser.parse (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:40:17):8496 [2026-3-16 6:01:06 ├F10: PM┤] ERROR: TypeError: Cannot read property '_id' of null
+TypeError: Cannot read property '_id' of null
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:62:27
+    at exports.Tail.go (D:\KKuTu-master\KKuTu-master\Server\lib\sub\lizard.js:43:16)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:249:21
+    at callback (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:316:13)
+    at Query.preCB (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:298:6)
+    at Query.handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\query.js:138:12)
+    at Client._handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:290:19)
+    at Connection.emit (events.js:314:20)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:114:12
+    at Parser.parse (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:40:17):8496 [2026-3-16 7:48:54 ├F10: PM┤] ERROR: TypeError: Cannot read property '_id' of null
+TypeError: Cannot read property '_id' of null
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:62:27
+    at exports.Tail.go (D:\KKuTu-master\KKuTu-master\Server\lib\sub\lizard.js:43:16)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:249:21
+    at callback (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:316:13)
+    at Query.preCB (D:\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:298:6)
+    at Query.handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\query.js:138:12)
+    at Client._handleReadyForQuery (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:290:19)
+    at Connection.emit (events.js:314:20)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:114:12
+    at Parser.parse (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:40:17):8496 [2026-3-16 7:48:58 ├F10: PM┤] ERROR: TypeError: Cannot read property 'handleCommandComplete' of null
+TypeError: Cannot read property 'handleCommandComplete' of null
+    at Client._handleCommandComplete (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:360:22)
+    at Connection.emit (events.js:314:20)
+    at D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:114:12
+    at Parser.parse (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\parser.js:40:17)
+    at Socket.<anonymous> (D:\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg-protocol\dist\index.js:11:42)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:297:12)
+    at readableAddChunk (_stream_readable.js:272:9)
+    at Socket.Readable.push (_stream_readable.js:213:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23):8496 [2026-3-21 11:53:23 ├F10: PM┤] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:534:15)
+    at exports.Room.exports.roundReady (D:\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:134:32)
+    at exports.Room.my.route.my.routeSync (D:\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1343:13)
+    at Timeout.my.roundReady [as _onTimeout] (D:\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1149:13)
+    at listOnTimeout (internal/timers.js:554:17)
+    at processTimers (internal/timers.js:497:7)
