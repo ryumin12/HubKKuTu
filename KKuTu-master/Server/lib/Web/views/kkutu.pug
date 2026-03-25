@@ -288,7 +288,7 @@ block Middle
 			div#ri-players(style='width: 100%;')
 		div.dialog-bar.tail-button
 			button#room-info-join= L('join')
-	+Dialog('ProfileDiag', 300, 365)
+	+Dialog('ProfileDiag', 390, 365)
 		div.dialog-bar.profile-head
 		div.dialog-bar
 			h4(style='width: 83px;')= L('place')
@@ -346,14 +346,14 @@ block Middle
 			h4.dialog-bar-value#replay-players -
 		div.dialog-bar.tail-button
 			button#replay-view= L('replayView')
-	+Dialog('DressDiag', 600, 280, L('dress'))
+	+Dialog('DressDiag', 645, 280, L('dress'))
 		div.dialog-bar
 			h4(style='width: 150px;')= L('myExordial')
-			input#dress-exordial(type='textfield', placeholder=L('myExordialX'), style='width: 435px;', maxlength=100)
+			input#dress-exordial(type='textfield', placeholder=L('myExordialX'), style='width: 445px;', maxlength=100)
 		div.dialog-bar(style='width: 150px;')
 			div.moremi#dress-view(style='float: left; width: 150px; height: 150px;')
 			h4(style='width: 100%; font-weight: bold;')= L('myMoremi')
-		div.dialog-bar(style='padding: 5px; width: 440px;')
+		div.dialog-bar(style='padding: 5px; width: 485px;')
 			div(style='border-bottom: 1px solid #CCCCCC; height: 20px;')
 				- for(var i in locals.CATEGORIES)
 					- var v = locals.GROUPS[locals.CATEGORIES[i]] || [];
