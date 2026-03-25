@@ -1446,6 +1446,9 @@ function getRewards(mode, score, bonus, rank, all, ss){
 		case "KKK":
 			rw.score += score * 1.4;
 			break;
+		case "KGA":
+			rw.score += score * 0.55;
+			break;
 		default:
 			break;
 	}

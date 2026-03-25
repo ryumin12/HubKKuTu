@@ -25,7 +25,7 @@ exports.SPAM_CLEAR_DELAY = 1600;
 exports.SPAM_ADD_DELAY = 750;
 exports.SPAM_LIMIT = 700;
 exports.BLOCKED_LENGTH = 10000;
-exports.KICK_BY_SPAM = 9;z
+exports.KICK_BY_SPAM = 9;
 exports.MAX_OBSERVER = 4;
 exports.TESTER = GLOBAL.ADMIN.concat([
 	"Input tester id here"
@@ -195,12 +195,21 @@ exports.RULE = {
 	},
 	'KKK': { lang: "ko",
 		rule: "Classic",
-		opts: [ "man", "ext", "mis" ],
+		opts: [ "man", "ext", "mis", "loa", "str" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
+	'KGA': { lang: "ko",
+		rule: "Classic",
+		opts: [ "man", "ext", "mis", "loa", "str" ],
+		time: 1,
+		ai: true,
+		big: false,
+		_back: true,
+		ewq: true
+	}
 };
 exports.getPreScore = function(text, chain, tr){
 	return 2 * (Math.pow(5 + 7 * (text || "").length, 0.74) + 0.88 * (chain || []).length) * ( 0.5 + 0.5 * tr );
