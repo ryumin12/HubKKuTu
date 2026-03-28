@@ -209,6 +209,14 @@ exports.RULE = {
 		big: false,
 		_back: true,
 		ewq: true
+	},
+	'KUN': { lang: "ko",
+		rule: "Hunmin",
+		opts: [ "ext", "mis", "loa", "str" ],
+		time: 1,
+		ai: true,
+		big: false,
+		ewq: true
 	}
 };
 exports.getPreScore = function(text, chain, tr){
