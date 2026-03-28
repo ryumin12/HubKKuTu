@@ -49,7 +49,7 @@ exports.roundReady = function(){
 	my.game.round++;
 	my.game.roundTime = my.time * 1000;
 	if(my.game.round <= my.round){
-		my.game.theme = getTheme(2, my.game.done);
+		my.game.theme = getTheme(Const.GAME_TYPE[my.mode] === 'HUN' ? 2 : 3, my.game.done);
 		my.game.chain = [];
 		if(my.opts.mission) my.game.mission = getMission(my.game.theme);
 		my.game.done.push(my.game.theme);

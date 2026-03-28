@@ -1449,6 +1449,9 @@ function getRewards(mode, score, bonus, rank, all, ss){
 		case "KGA":
 			rw.score += score * 0.55;
 			break;
+		case 'KUN':
+			rw.score += score * 0.5;
+			break;
 		default:
 			break;
 	}
