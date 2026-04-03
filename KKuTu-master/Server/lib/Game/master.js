@@ -387,16 +387,9 @@ exports.init = function(_SID, CHAN){
 					return;
 				}
 				if($c.guest){
-					if(SID != "0"){
-						$c.sendError(402);
-						$c.socket.close();
-						return;
-					}
-					if(KKuTu.NIGHT){
-						$c.sendError(440);
-						$c.socket.close();
-						return;
-					}
+					$c.sendError(402);
+					$c.socket.close();
+					return;
 				}
 				/* Enhanced User Block System [S] */
 				if(GLOBAL.USER_BLOCK_OPTIONS.USE_MODULE && ((GLOBAL.USER_BLOCK_OPTIONS.BLOCK_IP_ONLY_FOR_GUEST && $c.guest) || !GLOBAL.USER_BLOCK_OPTIONS.BLOCK_IP_ONLY_FOR_GUEST)){
