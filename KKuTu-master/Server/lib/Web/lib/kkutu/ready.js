@@ -405,7 +405,7 @@ $(document).ready(function(){
 		$("#room-limit").val($data.room.limit);
 		$("#room-mode").val($data.room.mode).trigger('change');
 		$("#room-round").val($data.room.round);
-		$("#room-time").val($data.room.time / rule.time);
+		$("#room-time").val($data.room.time);
 		for(i in OPTIONS){
 			k = OPTIONS[i].name.toLowerCase();
 			$("#room-" + k).attr('checked', $data.room.opts[k]);
@@ -515,7 +515,7 @@ $(document).ready(function(){
 		else $("#room-injpick-panel").hide();
 		if(rule.rule == "Typing") $("#room-round").val(3);
 		$("#room-time").children("option").each(function(i, o){
-			$(o).html(Number($(o).val()) * rule.time + L['SECOND']);
+			$(o).html(Number($(o).val()) + L['SECOND']);
 		});
 	}).trigger('change');
 	$stage.menu.spectate.on('click', function(e){
