@@ -622,35 +622,35 @@ function runCommand(cmd){
 			}else{
 				var inputs = cmd.slice(1);
 				var themes = $data._injpick || [];
-
+				
 				var i, j, key, name, code;
 				
 				for(i in inputs){
 					var input = inputs[i].toLowerCase();
 					code = null;
-
+					
 					for(key in L){
 						if(key.indexOf("theme_") === 0){
 							name = L[key].toLowerCase();
-
+							
 							var ni = 0, ii = 0;
 							while (ni < name.length && ii < input.length) {
 								if (name[ni] === input[ii]) ii++;
 								ni++;
 							}
-
+							
 							if (ii === input.length) {
 								code = key.replace("theme_", "");
 								break;
 							}
 						}
 					}
-
+					
 					if(!code){
 						notice("주제 없음: " + inputs[i]);
 						continue;
 					}
-
+					
 					j = themes.indexOf(code);
 					if(j != -1){
 						themes.splice(j, 1);
@@ -660,9 +660,9 @@ function runCommand(cmd){
 						notice("추가: " + L["theme_" + code]);
 					}
 				}
-
+				
 				$data._injpick = themes;
-
+				
 				var opts = {};
 				var k;
 				for(i in OPTIONS){
@@ -685,12 +685,12 @@ function runCommand(cmd){
 		case "/방제":
 		case "/rt":
 			var title = cmd.slice(1).join(' ');
-
+			
 			if(!title || title.length > 20){
 				notice(L['error_431']);
 				break;
 			}
-
+			
 			var opts = {};
 			var i, k;
 			for(i in OPTIONS){
@@ -698,7 +698,7 @@ function runCommand(cmd){
 				opts[k] = $data.room.opts[k];
 			}
 			opts.injpick = $data._injpick;
-
+			
 			send('setRoom', {
 				title: title,
 				password: $data.room.password || "",
@@ -712,19 +712,19 @@ function runCommand(cmd){
 		case "/비번":
 		case "/pw":
 			var pw = cmd.slice(1).join(' ');
-
+			
 			if(pw.length > 20){
 				notice(L['error_431']);
 				break;
 			}
-
+			
 			var opts = {};
 			for(i in OPTIONS){
 				k = OPTIONS[i].name.toLowerCase();
 				opts[k] = $data.room.opts[k];
 			}
 			opts.injpick = $data._injpick;
-
+			
 			send('setRoom', {
 				title: $data.room.title,
 				password: pw,
@@ -738,19 +738,19 @@ function runCommand(cmd){
 		case "/인원":
 		case "/u":
 			var limit = Number(cmd[1]);
-
+			
 			if(!limit || isNaN(limit) || limit < 1 || limit > 8){
 				notice(L['error_432']);
 				break;
 			}
-
+			
 			var opts = {};
 			for(i in OPTIONS){
 				k = OPTIONS[i].name.toLowerCase();
 				opts[k] = $data.room.opts[k];
 			}
 			opts.injpick = $data._injpick;
-
+			
 			send('setRoom', {
 				title: $data.room.title,
 				password: $data.room.password || "",
@@ -764,19 +764,19 @@ function runCommand(cmd){
 		case "/라운드":
 		case "/rd":
 			var round = Number(cmd[1]);
-
+			
 			if(!round || isNaN(round) || round < 1){
 				notice(L['error_433']);
 				break;
 			}
-
+			
 			var opts = {};
 			for(i in OPTIONS){
 				k = OPTIONS[i].name.toLowerCase();
 				opts[k] = $data.room.opts[k];
 			}
 			opts.injpick = $data._injpick;
-
+			
 			send('setRoom', {
 				title: $data.room.title,
 				password: $data.room.password || "",
@@ -790,19 +790,19 @@ function runCommand(cmd){
 		case "/시간":
 		case "/t":
 			var time = Number(cmd[1]);
-
+			d
 			if(!time || isNaN(time) || time <= 0){
 				notice(L['error_431']);
 				break;
 			}
-
+			
 			var opts = {};
 			for(i in OPTIONS){
 				k = OPTIONS[i].name.toLowerCase();
 				opts[k] = $data.room.opts[k];
 			}
 			opts.injpick = $data._injpick;
-
+			
 			send('setRoom', {
 				title: $data.room.title,
 				password: $data.room.password || "",
