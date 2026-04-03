@@ -633,7 +633,13 @@ function runCommand(cmd){
 						if(key.indexOf("theme_") === 0){
 							name = L[key].toLowerCase();
 
-							if(name.indexOf(input) !== -1){
+							var ni = 0, ii = 0;
+							while (ni < name.length && ii < input.length) {
+								if (name[ni] === input[ii]) ii++;
+								ni++;
+							}
+
+							if (ii === input.length) {
 								code = key.replace("theme_", "");
 								break;
 							}
@@ -664,7 +670,7 @@ function runCommand(cmd){
 					opts[k] = $data.room.opts[k];
 				}
 				opts.injpick = $data._injpick;
-
+				
 				send('setRoom', {
 					title: $data.room.title,
 					password: $data.room.password || "",
@@ -796,7 +802,7 @@ function runCommand(cmd){
 				opts[k] = $data.room.opts[k];
 			}
 			opts.injpick = $data._injpick;
-			
+
 			send('setRoom', {
 				title: $data.room.title,
 				password: $data.room.password || "",
