@@ -696,7 +696,6 @@ exports.Client = function(socket, profile, sid){
 		ud.game.practice = my.pracRoom.id;
 		if(pr = $room.preReady()) return my.sendError(pr);
 		my.publish('user', ud);
-		my.pracRoom.time /= my.pracRoom.rule.time;
 		my.pracRoom.limit = 1;
 		my.pracRoom.password = "";
 		my.pracRoom.practice = true;
@@ -797,7 +796,7 @@ exports.Room = function(room, channel){
 	my.mode = room.mode;
 	my.rule = Const.getRule(room.mode);
 	my.round = Math.round(room.round);
-	my.time = room.time * my.rule.time;
+	my.time = room.time;
 	my.opts = {
 		manner: room.opts.manner,
 		extend: room.opts.injeong,
@@ -1000,7 +999,7 @@ exports.Room = function(room, channel){
 		my.mode = room.mode;
 		my.rule = Const.getRule(room.mode);
 		my.round = Math.round(room.round);
-		my.time = room.time * my.rule.time;
+		my.time = room.time;
 		if(room.opts && my.opts){
 			for(i in Const.OPTIONS){
 				k = Const.OPTIONS[i].name.toLowerCase();

@@ -614,6 +614,199 @@ function runCommand(cmd){
 				notice(L['myId'] + $data.id);
 			}
 			break;
+		case "/주제":
+		case "/th":
+			var rule = RULE[MODE[$("#room-mode").val()]];
+			if(rule.opts.indexOf("ijp") === -1){
+				notice(L['error_456']);
+			}else{
+				var inputs = cmd.slice(1);
+				var themes = $data._injpick || [];
+
+				var i, j, key, name, code;
+				
+				for(i in inputs){
+					var input = inputs[i].toLowerCase();
+					code = null;
+
+					for(key in L){
+						if(key.indexOf("theme_") === 0){
+							name = L[key].toLowerCase();
+
+							if(name.indexOf(input) !== -1){
+								code = key.replace("theme_", "");
+								break;
+							}
+						}
+					}
+
+					if(!code){
+						notice("주제 없음: " + inputs[i]);
+						continue;
+					}
+
+					j = themes.indexOf(code);
+					if(j != -1){
+						themes.splice(j, 1);
+						notice("제거: " + L["theme_" + code]);
+					}else{
+						themes.push(code);
+						notice("추가: " + L["theme_" + code]);
+					}
+				}
+
+				$data._injpick = themes;
+
+				var opts = {};
+				var k;
+				for(i in OPTIONS){
+					k = OPTIONS[i].name.toLowerCase();
+					opts[k] = $data.room.opts[k];
+				}
+				opts.injpick = $data._injpick;
+
+				send('setRoom', {
+					title: $data.room.title,
+					password: $data.room.password || "",
+					limit: $data.room.limit,
+					mode: $data.room.mode,
+					round: $data.room.round,
+					time: $data.room.time,
+					opts: opts
+				});
+			}
+			break;
+		case "/방제":
+		case "/rt":
+			var title = cmd.slice(1).join(' ');
+
+			if(!title || title.length > 20){
+				notice(L['error_431']);
+				break;
+			}
+
+			var opts = {};
+			var i, k;
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+
+			send('setRoom', {
+				title: title,
+				password: $data.room.password || "",
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/비번":
+		case "/pw":
+			var pw = cmd.slice(1).join(' ');
+
+			if(pw.length > 20){
+				notice(L['error_431']);
+				break;
+			}
+
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+
+			send('setRoom', {
+				title: $data.room.title,
+				password: pw,
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/인원":
+		case "/u":
+			var limit = Number(cmd[1]);
+
+			if(!limit || isNaN(limit) || limit < 1 || limit > 8){
+				notice(L['error_432']);
+				break;
+			}
+
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+
+			send('setRoom', {
+				title: $data.room.title,
+				password: $data.room.password || "",
+				limit: limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/라운드":
+		case "/rd":
+			var round = Number(cmd[1]);
+
+			if(!round || isNaN(round) || round < 1){
+				notice(L['error_433']);
+				break;
+			}
+
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+
+			send('setRoom', {
+				title: $data.room.title,
+				password: $data.room.password || "",
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/시간":
+		case "/t":
+			var time = Number(cmd[1]);
+
+			if(!time || isNaN(time) || time <= 0){
+				notice(L['error_431']);
+				break;
+			}
+
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+			
+			send('setRoom', {
+				title: $data.room.title,
+				password: $data.room.password || "",
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: time,
+				opts: opts
+			});
+			break;
 		default:
 			for(i in CMD) notice(CMD[i], i);
 			break;

@@ -236,12 +236,12 @@ exports.MISSION_ko = [ "가", "나", "다", "라", "마", "바", "사", "아", "
 exports.MISSION_en = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 
 exports.KO_INJEONG = [
-	"BOJ", "BGD", "GTA", "SCP", "STS", "SDV", "TBR", "IMS", "KRR", "GGK", "WAP", "KMU", "KKC", "KTV", "KMY", "KBR", "NRT", "NMS", "NYK", "NBS", "NET",
-	"NSK", "DGR", "KGG", "KRY", "KAP", "KSC", "DBD", "DOR", "DOT", "DOS", "DBP", "DRR", "DIG", "DGM", "RAG", "JLN", "LVL", "RAP", "RTC", "RTA",
-	"LOL", "MRN", "MMM", "MMJ", "MIN", "JAN", "MAP", "MKK", "MNG", "MDM",
-	"MOB", "MOA", "MHK", "MEW", "BAL", "SOK", "BOD", "BGS", "BRS", "BLA", "GGG", "HYK", "CYP", "SEO", "SEV", "SSH", "SON", "SPM", "HRH", "STA", "SMM", "SIK", "OIJ",
-	"KGR", "ESB", "ELW", "JJP", "KMV", "OIM", "OVW", "NEX", "BTJ", "YKW", "YRU", "ONE", "OPM", "ONP", "WOW", "WEB", "UNE",
-	"YRY", "KPO", "UHW", "VOD", "ITR", "JTE", "CAR", "ZRM", "JDJ", "ZEL", "JJK", "JWT", "ZIK", "SGK", "CHE", "CSM", "SSK", "KAR", "CTP", "CKR", "COC", "TRB", "POK", "PRS", "PIK", "HAI",
+	"AVA", "BOJ", "BGD", "GTA", "HLT", "HLL", "SCP", "SMT", "STS", "SDV", "TBR", "IMS", "GOH", "KRR", "GGK", "GAP", "WAP", "KMU", "KKC", "KTV", "KMY", "KBR", "NRT", "NMS", "NYK", "NBS", "NET",
+	"NSK", "DGR", "KGG", "KRY", "KAP", "KSC", "DBD", "DOR", "DOT", "DOS", "DBP", "DRR", "DIG", "DGM", "RAG", "JLN", "LVL", "RUS", "RAP", "RTC", "RTA",
+	"LOL", "RTH", "MRN", "MMM", "MMJ", "MIN", "JAN", "MAP", "MKK", "MNG", "MDM",
+	"MOB", "MOA", "MHK", "WTS", "MEW", "BAL", "SOK", "BOD", "BCS", "BGS", "BRS", "BLA", "BLC", "GGG", "HYK", "CYP", "COL", "SEO", "SEV", "SSH", "SON", "SPM", "HRH", "STA", "SMM", "SHS", "SIK", "OIJ",
+	"KGR", "ESB", "UDT", "ELR", "ELW", "JJP", "KMV", "OIM", "OVW", "NEX", "BTJ", "YKW", "YRU", "UMM", "ONE", "OPM", "ONP", "WOW", "WEB", "UNE",
+	"YRY", "KPO", "UHW", "VOD", "IJB", "ITR", "JTE", "JGM", "CAR", "ZRM", "JDJ", "ZZZ", "ZEL", "JJK", "JWT", "ZIK", "SGK", "CHE", "CSM", "SSK", "KAR", "CTP", "CKR", "COC", "TRB", "POK", "PRS", "PIK", "HAI",
 	"HSS", "KGS", "HDU", "HRP", "HHG", "HSG", "HAN", "HDC", "HBK", "HYS", "HOS"
 ];
 exports.EN_INJEONG = [
