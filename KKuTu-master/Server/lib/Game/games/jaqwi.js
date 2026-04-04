@@ -275,15 +275,36 @@ function getAnswer(theme, nomean){
 		if(!$res) return R.go(null);
 		var pick;
 		var len = $res.length;
+		var strict = true;
+		var origin = $res.slice();
 		
 		if(!len) return R.go(null);
 		do{
 			pick = Math.floor(Math.random() * len);
-			if($res[pick]._id.length >= 2) if($res[pick].type == "INJEONG" || $res[pick].mean.length >= 0){
-				return R.go($res[pick]);
+			var l = $res[pick]._id.length;
+			
+			if(l >= 2){
+				if(!strict ||
+					(my.opts.short && my.opts.long && ((l >= 2 && l <= 8) || l >= 15)) ||
+					(my.opts.short && !my.opts.long && (l >= 2 && l <= 8)) ||
+					(!my.opts.short && my.opts.long && (l >= 15)) ||
+					(!my.opts.short && !my.opts.long)
+				){
+					if($res[pick].type == "INJEONG" || $res[pick].mean.length >= 0){
+						return R.go($res[pick]);
+					}
+				}
 			}
+			
 			$res.splice(pick, 1);
 			len--;
+			
+			if(strict && len <= 0){
+				strict = false;
+				$res = origin.slice();
+				len = $res.length;
+			}
+			
 		}while(len > 0);
 		R.go(null);
 	});
