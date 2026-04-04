@@ -558,7 +558,13 @@ function runCommand(cmd){
 		'/ㄷㄷ': L['cmd_ee'],
 		'/무시': L['cmd_wb'],
 		'/차단': L['cmd_shut'],
-		'/id': L['cmd_id']
+		'/id': L['cmd_id'],
+		'/방제': L['cmd_rt'],
+		'/비번': L['cmd_pw'],
+		'/인원': L['cmd_u'],
+		'/라운드': L['cmd_rd'],
+		'/시간': L['cmd_t'],
+		'/주제': L['cmd_th']
 	};
 	
 	switch(cmd[0].toLowerCase()){

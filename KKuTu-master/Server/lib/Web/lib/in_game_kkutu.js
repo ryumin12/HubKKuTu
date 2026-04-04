@@ -460,7 +460,7 @@ $(document).ready(function(){
 		$("#room-limit").val($data.room.limit);
 		$("#room-mode").val($data.room.mode).trigger('change');
 		$("#room-round").val($data.room.round);
-		$("#room-time").val($data.room.time / rule.time);
+		$("#room-time").val($data.room.time);
 		for(i in OPTIONS){
 			k = OPTIONS[i].name.toLowerCase();
 			$("#room-" + k).attr('checked', $data.room.opts[k]);
@@ -570,7 +570,7 @@ $(document).ready(function(){
 		else $("#room-injpick-panel").hide();
 		if(rule.rule == "Typing") $("#room-round").val(3);
 		$("#room-time").children("option").each(function(i, o){
-			$(o).html(Number($(o).val()) * rule.time + L['SECOND']);
+			$(o).html(Number($(o).val()) + L['SECOND']);
 		});
 	}).trigger('change');
 	$stage.menu.spectate.on('click', function(e){
@@ -2431,7 +2431,13 @@ function runCommand(cmd){
 		'/ㄷㄷ': L['cmd_ee'],
 		'/무시': L['cmd_wb'],
 		'/차단': L['cmd_shut'],
-		'/id': L['cmd_id']
+		'/id': L['cmd_id'],
+		'/방제': L['cmd_rt'],
+		'/비번': L['cmd_pw'],
+		'/인원': L['cmd_u'],
+		'/라운드': L['cmd_rd'],
+		'/시간': L['cmd_t'],
+		'/주제': L['cmd_th']
 	};
 	
 	switch(cmd[0].toLowerCase()){
@@ -2486,6 +2492,205 @@ function runCommand(cmd){
 			}else{
 				notice(L['myId'] + $data.id);
 			}
+			break;
+		case "/주제":
+		case "/th":
+			var rule = RULE[MODE[$("#room-mode").val()]];
+			if(rule.opts.indexOf("ijp") === -1){
+				notice(L['error_456']);
+			}else{
+				var inputs = cmd.slice(1);
+				var themes = $data._injpick || [];
+				
+				var i, j, key, name, code;
+				
+				for(i in inputs){
+					var input = inputs[i].toLowerCase();
+					code = null;
+					
+					for(key in L){
+						if(key.indexOf("theme_") === 0){
+							name = L[key].toLowerCase();
+							
+							var ni = 0, ii = 0;
+							while (ni < name.length && ii < input.length) {
+								if (name[ni] === input[ii]) ii++;
+								ni++;
+							}
+							
+							if (ii === input.length) {
+								code = key.replace("theme_", "");
+								break;
+							}
+						}
+					}
+					
+					if(!code){
+						notice("주제 없음: " + inputs[i]);
+						continue;
+					}
+					
+					j = themes.indexOf(code);
+					if(j != -1){
+						themes.splice(j, 1);
+						notice("제거: " + L["theme_" + code]);
+					}else{
+						themes.push(code);
+						notice("추가: " + L["theme_" + code]);
+					}
+				}
+				
+				$data._injpick = themes;
+				
+				var opts = {};
+				var k;
+				for(i in OPTIONS){
+					k = OPTIONS[i].name.toLowerCase();
+					opts[k] = $data.room.opts[k];
+				}
+				opts.injpick = $data._injpick;
+				
+				send('setRoom', {
+					title: $data.room.title,
+					password: $data.room.password || "",
+					limit: $data.room.limit,
+					mode: $data.room.mode,
+					round: $data.room.round,
+					time: $data.room.time,
+					opts: opts
+				});
+			}
+			break;
+		case "/방제":
+		case "/rt":
+			var title = cmd.slice(1).join(' ');
+			
+			if(!title || title.length > 20){
+				notice(L['error_431']);
+				break;
+			}
+			
+			var opts = {};
+			var i, k;
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+			
+			send('setRoom', {
+				title: title,
+				password: $data.room.password || "",
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/비번":
+		case "/pw":
+			var pw = cmd.slice(1).join(' ');
+			
+			if(pw.length > 20){
+				notice(L['error_431']);
+				break;
+			}
+			
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+			
+			send('setRoom', {
+				title: $data.room.title,
+				password: pw,
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/인원":
+		case "/u":
+			var limit = Number(cmd[1]);
+			
+			if(!limit || isNaN(limit) || limit < 1 || limit > 8){
+				notice(L['error_432']);
+				break;
+			}
+			
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+			
+			send('setRoom', {
+				title: $data.room.title,
+				password: $data.room.password || "",
+				limit: limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/라운드":
+		case "/rd":
+			var round = Number(cmd[1]);
+			
+			if(!round || isNaN(round) || round < 1){
+				notice(L['error_433']);
+				break;
+			}
+			
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+			
+			send('setRoom', {
+				title: $data.room.title,
+				password: $data.room.password || "",
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: round,
+				time: $data.room.time,
+				opts: opts
+			});
+			break;
+		case "/시간":
+		case "/t":
+			var time = Number(cmd[1]);
+			d
+			if(!time || isNaN(time) || time <= 0){
+				notice(L['error_431']);
+				break;
+			}
+			
+			var opts = {};
+			for(i in OPTIONS){
+				k = OPTIONS[i].name.toLowerCase();
+				opts[k] = $data.room.opts[k];
+			}
+			opts.injpick = $data._injpick;
+			
+			send('setRoom', {
+				title: $data.room.title,
+				password: $data.room.password || "",
+				limit: $data.room.limit,
+				mode: $data.room.mode,
+				round: $data.room.round,
+				time: time,
+				opts: opts
+			});
 			break;
 		default:
 			for(i in CMD) notice(CMD[i], i);

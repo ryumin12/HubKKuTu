@@ -217,6 +217,14 @@ exports.RULE = {
 		ai: true,
 		big: false,
 		ewq: true
+	},
+	'KSC': { lang: "ko",
+		rule: "Jaqwi",
+		opts: [ "ijp" ],
+		time: 1,
+		ai: true,
+		big: false,
+		ewq: true
 	}
 };
 exports.getPreScore = function(text, chain, tr){
@@ -236,13 +244,13 @@ exports.MISSION_ko = [ "가", "나", "다", "라", "마", "바", "사", "아", "
 exports.MISSION_en = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 
 exports.KO_INJEONG = [
-	"AVA", "BOJ", "BGD", "GTA", "HLT", "HLL", "SCP", "SMT", "STS", "SDV", "TBR", "IMS", "GOH", "KRR", "GGK", "GAP", "WAP", "KMU", "KKC", "KTV", "KMY", "KBR", "NRT", "NMS", "NYK", "NBS", "NET",
-	"NSK", "DGR", "KGG", "KRY", "KAP", "KSC", "DBD", "DOR", "DOT", "DOS", "DBP", "DRR", "DIG", "DGM", "RAG", "JLN", "LVL", "RUS", "RAP", "RTC", "RTA",
+	"AVA", "BOJ", "BGD", "GTA", "HLT", "HLL", "SCP", "SMT", "STS", "SDV", "TBR", "IMS", "GOH", "KRR", "GGK", "GAP", "WAP", "KMU", "KKC", "KTV", "KMY", "KBR", "NRT", "NMS", "MHA", "NYK", "NBS", "NET",
+	"NSK", "DGR", "KGG", "KRY", "KAP", "KSC", "DBD", "DOR", "DOT", "DOS", "DBP", "DRR", "DRB", "DIG", "DGM", "RAG", "JLN", "LVL", "RUS", "RAP", "LOR", "RTC", "RTA",
 	"LOL", "RTH", "MRN", "MMM", "MMJ", "MIN", "JAN", "MAP", "MKK", "MNG", "MDM",
-	"MOB", "MOA", "MHK", "WTS", "MEW", "BAL", "SOK", "BOD", "BCS", "BGS", "BRS", "BLA", "BLC", "GGG", "HYK", "CYP", "COL", "SEO", "SEV", "SSH", "SON", "SPM", "HRH", "STA", "SMM", "SHS", "SIK", "OIJ",
+	"MOB", "MOA", "MHK", "WTS", "MEW", "BAL", "SOK", "BOD", "BCS", "BGS", "BRS", "BLA", "BLC", "GGG", "HYK", "CYP", "COL", "SWB", "SEO", "SEV", "SSH", "SON", "SPM", "HRH", "STA", "SMM", "SHS", "SIK", "OIJ",
 	"KGR", "ESB", "UDT", "ELR", "ELW", "JJP", "KMV", "OIM", "OVW", "NEX", "BTJ", "YKW", "YRU", "UMM", "ONE", "OPM", "ONP", "WOW", "WEB", "UNE",
-	"YRY", "KPO", "UHW", "VOD", "IJB", "ITR", "JTE", "JGM", "CAR", "ZRM", "JDJ", "ZZZ", "ZEL", "JJK", "JWT", "ZIK", "SGK", "CHE", "CSM", "SSK", "KAR", "CTP", "CKR", "COC", "TRB", "POK", "PRS", "PIK", "HAI",
-	"HSS", "KGS", "HDU", "HRP", "HHG", "HSG", "HAN", "HDC", "HBK", "HYS", "HOS"
+	"YRY", "KPO", "UHW", "VOD", "IJB", "ITR", "JTE", "JGM", "CAR", "ZRM", "JDJ", "ZZZ", "ZEL", "ZBK", "JJK", "JWT", "ZIK", "SGK", "CHE", "CSM", "SSK", "KAR", "CCT", "CTP", "CKR", "COC", "TRB", "PAD", "POK", "PRS", "PIK", "HSS",
+	"HAI", "KGS", "HDU", "HRP", "HHG", "HSG", "HAN", "HDC", "HBK", "HYS", "HOS"
 ];
 exports.EN_INJEONG = [
 	"LOL"

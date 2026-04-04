@@ -78,7 +78,7 @@ exports.turnStart = function(){
 	
 	if(!my.game.answer) return;
 	
-	my.game.conso = getConsonants.call(my, my.game.answer._id, 1);
+	my.game.conso = Const.GAME_TYPE[my.mode] === 'KSC' ? shuffle(my.game.answer._id) : getConsonants.call(my, my.game.answer._id, 1);
 	my.game.roundAt = (new Date()).getTime();
 	my.game.meaned = 0;
 	my.game.primary = 0;
@@ -211,18 +211,27 @@ function getConsonants(word, lucky){
 		lucky--;
 	}
 	for(i=0; i<len; i++){
-		c = word.charCodeAt(i) - 44032;
-		
-		if(c < 0 || rv.includes(i)){
-			R += word.charAt(i);
-			continue;
-		}else{
-			if (Const.GAME_TYPE[my.mode] == 'CSQ') {
-				c = Math.floor(c / 588);
-				R += Const.INIT_SOUNDS[c];
-			} else {
-				c = Math.floor((c % 588) / 28);
-				R += Const.MEDIAL_SOUNDS[c];
+		if (Const.GAME_TYPE[my.mode] === 'KSC') {
+			if(rv.includes(i)){
+				R += word.charAt(i);
+				continue;
+			}else{
+				R += "○";
+			}
+		} else {
+			c = word.charCodeAt(i) - 44032;
+			
+			if(c < 0 || rv.includes(i)){
+				R += word.charAt(i);
+				continue;
+			}else{
+				if (Const.GAME_TYPE[my.mode] == 'CSQ') {
+					c = Math.floor(c / 588);
+					R += Const.INIT_SOUNDS[c];
+				} else {
+					c = Math.floor((c % 588) / 28);
+					R += Const.MEDIAL_SOUNDS[c];
+				}
 			}
 		}
 	}
@@ -241,6 +250,18 @@ function getHint($ans){
 	R.push(h2);
 	
 	return R;
+}
+function shuffle(word){
+	var arr = word.split('');
+	var i, j, tmp;
+
+	for(i = arr.length - 1; i > 0; i--){
+		j = Math.floor(Math.random() * (i + 1));
+		tmp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = tmp;
+	}
+	return arr.join('');
 }
 function getAnswer(theme, nomean){
 	var my = this;
