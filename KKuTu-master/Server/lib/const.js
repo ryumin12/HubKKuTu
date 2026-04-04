@@ -41,7 +41,9 @@ exports.OPTIONS = {
 	'str': { name: "Strict" },
 	'k32': { name: "Sami" },
 	'no2': { name: "No2" },
-	'no3': { name: "No3" }
+	'no3': { name: "No3" },
+	'sho': { name: "Short"},
+	'lon': { name: "Long" }
 };
 exports.MOREMI_PART = [ 'back', 'body', 'eye', 'eyedeco', 'mouth', 'facedeco', 'shoes', 'clothes', 'dressdeco', 'head', 'hairdeco', 'lhand', 'rhand', 'front' ];
 exports.CATEGORIES = [ "all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "deco", "back" ];
@@ -106,7 +108,7 @@ exports.RULE = {
 	},
 	'CSQ': { lang: "ko",
 		rule: "Jaqwi",
-		opts: [ "ijp" ],
+		opts: [ "ijp", "sho", "lon" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -187,7 +189,7 @@ exports.RULE = {
 	},
 	'VWQ': { lang: "ko",
 		rule: "Jaqwi",
-		opts: [ "ijp" ],
+		opts: [ "ijp", "sho", "lon" ],
 		time: 1,
 		ai: true,
 		big: false,
@@ -220,7 +222,7 @@ exports.RULE = {
 	},
 	'KSC': { lang: "ko",
 		rule: "Jaqwi",
-		opts: [ "ijp" ],
+		opts: [ "ijp", "sho", "lon" ],
 		time: 1,
 		ai: true,
 		big: false,
