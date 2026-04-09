@@ -283,16 +283,9 @@ function getAnswer(theme, nomean){
 			pick = Math.floor(Math.random() * len);
 			var l = $res[pick]._id.length;
 			
-			if(l >= 2){
-				if(!strict ||
-					(my.opts.short && my.opts.long && ((l >= 2 && l <= 8) || l >= 15)) ||
-					(my.opts.short && !my.opts.long && (l >= 2 && l <= 8)) ||
-					(!my.opts.short && my.opts.long && (l >= 15)) ||
-					(!my.opts.short && !my.opts.long)
-				){
-					if($res[pick].type == "INJEONG" || $res[pick].mean.length >= 0){
-						return R.go($res[pick]);
-					}
+			if(!strict || my.opts.minwordlength <= l && l <= my.opts.maxwordlength){
+				if($res[pick].type == "INJEONG" || $res[pick].mean.length >= 0){
+					return R.go($res[pick]);
 				}
 			}
 			

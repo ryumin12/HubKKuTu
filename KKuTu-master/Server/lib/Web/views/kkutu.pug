@@ -199,6 +199,8 @@ block Middle
 				+GameOption(i, 'room')
 			div.dialog-opt#room-injpick-panel
 				button#room-injeong-pick(style='font-size: 11px;')= L('pickInjeong')
+			div.dialog-opt#room-word-length-panel
+				button#room-word-length(style='font-size: 11px;')= L('wordLength')
 		div.dialog-bar.tail-button
 			button#room-ok= L('OK')
 	+Dialog('InjPickDiag', 200, 400, L('pickInjeong'))
@@ -225,6 +227,13 @@ block Middle
 				- });
 		div.dialog-bar.tail-button
 			button#injpick-ok= L('OK')
+	+Dialog('WordLengthDiag', 200, 400, L('wordLength'))
+		h4= L('explWordLength')
+		div.dialog-bar
+			input#room-min-word-length(type='number', min=1, max=200, step=1, value=2)
+			input#room-max-word-length(type='number', min=1, max=200, step=1, value=200)
+		div.dialog-bar.tail-button
+			button#word-length-ok= L('OK')
 	+Dialog('PracticeDiag', 300, 135)
 		div.dialog-bar
 			h4= L('selectLevel')
