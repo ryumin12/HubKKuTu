@@ -519,6 +519,7 @@ KKuTu.onClientMessage = function ($c, msg) {
 function processClientRequest($c, msg) {
 	var stable = true;
 	var temp;
+	var hasWordLength;
 	var now = (new Date()).getTime();
 	
 	switch (msg.type) {
@@ -598,22 +599,29 @@ function processClientRequest($c, msg) {
 			break;
 		case 'enter':
 		case 'setRoom':
+			hasWordLength = Const.getRule(msg.mode).opts.includes("len");
 			if (!msg.title) stable = false;
 			if (!msg.limit) stable = false;
 			if (!msg.round) stable = false;
 			if (!msg.time) stable = false;
 			if (!msg.opts) stable = false;
+			if (hasWordLength && !msg.opts.minwordlength) stable = false;
+			if (hasWordLength && !msg.opts.maxwordlength) stable = false;
 
 			msg.code = false;
 			msg.limit = Number(msg.limit);
 			msg.mode = Number(msg.mode);
 			msg.round = Number(msg.round);
 			msg.time = Number(msg.time);
+			msg.opts.minwordlength = Number(msg.opts.minwordlength);
+			msg.opts.maxwordlength = Number(msg.opts.maxwordlength);
 
 			if (isNaN(msg.limit)) stable = false;
 			if (isNaN(msg.mode)) stable = false;
 			if (isNaN(msg.round)) stable = false;
 			if (isNaN(msg.time)) stable = false;
+			if (hasWordLength && isNaN(msg.opts.minwordlength)) stable = false;
+			if (hasWordLength && isNaN(msg.opts.maxwordlength)) stable = false;
 
 			if (stable) {
 				if (msg.title.length > 20) stable = false;

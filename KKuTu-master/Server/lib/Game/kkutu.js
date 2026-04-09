@@ -802,7 +802,9 @@ exports.Room = function(room, channel){
 		extend: room.opts.injeong,
 		mission: room.opts.mission,
 		loanword: room.opts.loanword,
-		injpick: room.opts.injpick || []
+		injpick: room.opts.injpick || [],
+		minwordlength: room.opts.minwordlength,
+		maxwordlength: room.opts.maxwordlength
 	};*/
 	my.master = null;
 	my.tail = [];
@@ -1009,6 +1011,10 @@ exports.Room = function(room, channel){
 				ij = Const[`${my.rule.lang.toUpperCase()}_IJP`];
 				my.opts.injpick = (room.opts.injpick || []).filter(function(item){ return ij.includes(item); });
 			}else my.opts.injpick = [];
+			if(my.rule.opts.includes("len")){
+				my.opts.minwordlength = room.opts.minwordlength;
+				my.opts.maxwordlength = room.opts.maxwordlength;
+			}
 		}
 		if(!my.rule.ai){
 			while(my.removeAI(false, true));
