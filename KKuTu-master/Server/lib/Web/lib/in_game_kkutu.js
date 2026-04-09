@@ -181,6 +181,8 @@ $(document).ready(function(){
 				injPickAll: $("#injpick-all"),
 				injPickNo: $("#injpick-no"),
 				injPickOK: $("#injpick-ok"),
+			wordLength: $("#WordLengthDiag"),
+				wordLengthOK: $("#word-length-ok"),
 			chatLog: $("#ChatLogDiag"),
 			obtain: $("#ObtainDiag"),
 				obtainOK: $("#obtain-ok"),
@@ -466,6 +468,8 @@ $(document).ready(function(){
 			$("#room-" + k).attr('checked', $data.room.opts[k]);
 		}
 		$data._injpick = $data.room.opts.injpick;
+		$("#room-min-word-length").val($data.room.opts.minwordlength);
+		$("#room-max-word-length").val($data.room.opts.maxwordlength);
 		showDialog($d = $stage.dialog.room);
 		$d.find(".dialog-title").html(L['setRoom']);
 	});
@@ -568,6 +572,8 @@ $(document).ready(function(){
 		$data._injpick = [];
 		if(rule.opts.indexOf("ijp") != -1) $("#room-injpick-panel").show();
 		else $("#room-injpick-panel").hide();
+		if(rule.opts.indexOf("len") != -1) $("#room-word-length-panel").show();
+		else $("#room-word-length-panel").hide();
 		if(rule.rule == "Typing") $("#room-round").val(3);
 		$("#room-time").children("option").each(function(i, o){
 			$(o).html(Number($(o).val()) + L['SECOND']);
@@ -707,7 +713,9 @@ $(document).ready(function(){
 	});
 	$stage.dialog.roomOK.on('click', function(e){
 		var i, k, opts = {
-			injpick: $data._injpick
+			injpick: $data._injpick,
+			minwordlength: $("#room-min-word-length").val(),
+			maxwordlength: $("#room-max-word-length").val()
 		};
 		for(i in OPTIONS){
 			k = OPTIONS[i].name.toLowerCase();
@@ -917,6 +925,12 @@ $(document).ready(function(){
 		});
 		$data._injpick = list;
 		$stage.dialog.injPick.hide();
+	});
+	$("#room-word-length").on('click', function(e){
+		showDialog($stage.dialog.wordLength);
+	});
+	$stage.dialog.wordLengthOK.on('click', function(e){
+		$stage.dialog.wordLength.hide();
 	});
 	$stage.dialog.kickVoteY.on('click', function(e){
 		send('kickVote', { agree: true });
