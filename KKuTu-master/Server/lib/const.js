@@ -246,8 +246,8 @@ exports.MISSION_en = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 exports.KO_INJEONG = [
 	"AVA", "BOJ", "BGD", "GTA", "HLT", "HLL", "SCP", "SMT", "STS", "SDV", "TBR", "IMS", "GOH", "KRR", "GGK", "GAP", "WAP", "KMU", "KKC", "KTV", "KMY", "KBR", "NRT", "NMS", "MHA", "NYK", "NBS", "NET",
 	"NSK", "DGR", "KGG", "KRY", "KAP", "KSC", "DBD", "DOR", "DOT", "DOS", "DBP", "DRR", "DRB", "DIG", "DGM", "RAG", "JLN", "LVL", "RUS", "RAP", "LOR", "RTC", "RTA",
-	"LOL", "RTH", "MRN", "MMM", "MMJ", "MIN", "JAN", "MAP", "MKK", "MNG", "MDM",
-	"MOB", "MOA", "MHK", "WTS", "MEW", "BAL", "SOK", "BOD", "BCS", "BGS", "BRS", "BLA", "BLC", "GGG", "HYK", "CYP", "COL", "SWB", "SEO", "SEV", "SSH", "SON", "SPM", "HRH", "STA", "SMM", "SHS", "SIK", "OIJ",
+	"LOL", "RTH", "MRN", "MMM", "MMJ", "MIN", "MAF", "JAN", "MAP", "MKK", "MNG", "MDM",
+	"MOA", "MHK", "WTS", "MEW", "BAL", "SOK", "BOD", "BCS", "BGS", "BRS", "BLA", "BLC", "GGG", "MOB", "HYK", "CYP", "COL", "SWB", "SEO", "SEV", "SSH", "SON", "SPM", "HRH", "STA", "SMM", "SHS", "SIK", "OIJ",
 	"KGR", "ESB", "UDT", "ELR", "ELW", "JJP", "KMV", "OIM", "OVW", "NEX", "BTJ", "YKW", "YRU", "UMM", "ONE", "OPM", "ONP", "WOW", "WEB", "UNE",
 	"YRY", "KPO", "UHW", "VOD", "IJB", "ITR", "JTE", "JGM", "CAR", "ZRM", "JDJ", "ZZZ", "ZEL", "ZBK", "JJK", "JWT", "ZIK", "SGK", "CHE", "CSM", "SSK", "KAR", "CCT", "CTP", "CKR", "COC", "TRB", "PAD", "POK", "PRS", "PIK", "HSS",
 	"HAI", "KGS", "HDU", "HRP", "HHG", "HSG", "HAN", "HDC", "HBK", "HYS", "HOS"
