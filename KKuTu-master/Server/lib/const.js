@@ -225,6 +225,14 @@ exports.RULE = {
 		ai: true,
 		big: false,
 		ewq: true
+	},
+	'KTT': { lang: "ko",
+		rule: "Classic",
+		opts: [ "man", "ext", "mis", "loa", "str" ],
+		time: 1,
+		ai: true,
+		big: false,
+		ewq: true
 	}
 };
 exports.getPreScore = function(text, chain, tr){

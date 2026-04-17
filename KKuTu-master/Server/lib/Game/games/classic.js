@@ -59,6 +59,14 @@ exports.getTitle = function(){
 			break;
 		case 'KKT':
 			my.game.wordLength = 3;
+			ja = 44032 + 588 * Math.floor(Math.random() * 18);
+			eng = "^[\\u" + ja.toString(16) + "-\\u" + (ja + 587).toString(16) + "]";
+			break;
+		case 'KTT':
+			my.game.wordLength = 4;
+			ja = 44032 + 588 * Math.floor(Math.random() * 18);
+			eng = "^[\\u" + ja.toString(16) + "-\\u" + (ja + 587).toString(16) + "]";
+			break;
 		case 'KKK':
 		case 'KSH':
 		case 'KGA':
@@ -435,6 +443,7 @@ function getAuto(char, subc, type){
 			adv = `^(${adc})...`;
 			break;
 		case 'KKT':
+		case 'KTT':
 			adv = `^(${adc}).{${my.game.wordLength-1}}$`;
 			break;
 		case 'KAP':
@@ -523,6 +532,7 @@ function getChar(text){
 		case 'EKT': case 'KKK': return text.slice(text.length - 3);
 		case 'ESH':
 		case 'KKT':
+		case 'KTT':
 		case 'KSH': return text.slice(-1);
 		case 'KAP': return text.charAt(0);
 		case 'KGA': return text.charAt(text.length % 2 ? (text.length - 1) / 2 : text.length / 2 - (Math.random() > 0.5));
@@ -539,7 +549,7 @@ function getSubChar(char){
 		case "EKT": case "KKK":
 			if(char.length > 2) r = char.slice(1);
 			break;
-		case "KKT": case "KSH": case "KAP": case "KGA":
+		case "KKT": case "KSH": case "KAP": case "KGA": case "KTT": 
 			k = c - 0xAC00;
 			if(k < 0 || k > 11171) break;
 			ca = [ Math.floor(k/28/21), Math.floor(k/28)%21, k%28 ];

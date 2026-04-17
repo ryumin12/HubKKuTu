@@ -2499,7 +2499,7 @@ function vibrate(level){
 function pushDisplay(text, mean, theme, wc){
 	var len;
 	var mode = MODE[$data.room.mode];
-	var isKKT = mode == "KKT";
+	var isKKT = mode == "KKT" || mode == "KTT";
 	var isRev = mode == "KAP";
 	var beat = BEAT[len = text.length];
 	var ta, kkt;
