@@ -745,7 +745,7 @@ function runCommand(cmd){
 		case "/u":
 			var limit = Number(cmd[1]);
 			
-			if(!limit || isNaN(limit) || limit < 1 || limit > 8){
+			if(!limit || isNaN(limit) || limit < 1){
 				notice(L['error_432']);
 				break;
 			}

@@ -375,7 +375,7 @@ $(document).ready(function(){
 		var $target = $(e.currentTarget);
 		var value = $target.val();
 		
-		if(value < 1 || value > 8){
+		if(value < 1){
 			$target.css('color', "#FF4444");
 		}else{
 			$target.css('color', "");
@@ -2632,7 +2632,7 @@ function runCommand(cmd){
 		case "/u":
 			var limit = Number(cmd[1]);
 			
-			if(!limit || isNaN(limit) || limit < 1 || limit > 8){
+			if(!limit || isNaN(limit) || limit < 1){
 				notice(L['error_432']);
 				break;
 			}
