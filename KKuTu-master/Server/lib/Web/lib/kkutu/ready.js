@@ -320,7 +320,7 @@ $(document).ready(function(){
 		var $target = $(e.currentTarget);
 		var value = $target.val();
 		
-		if(value < 1 || value > 8){
+		if(value < 1){
 			$target.css('color', "#FF4444");
 		}else{
 			$target.css('color', "");
